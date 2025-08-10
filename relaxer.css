@@ -1,0 +1,135 @@
+:root {
+  --bg-color: #0d0d0d;
+  --text-color: #0ff;
+  --accent-color: #0ff;
+  --font-family: 'Courier New', Courier, monospace;
+  --shadow: 0 0 15px #0ff;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+body.light {
+  --bg-color: #f4f4f4;
+  --text-color: #222;
+  --accent-color: #333;
+}
+
+body.dark {
+  --bg-color: #070707;
+  --text-color: #ffffff;
+  --accent-color: #d7d2d2;
+}
+
+body.neon {
+  --bg-color: #0d0d0d;
+  --text-color: #0ff;
+  --accent-color: #0ff;
+}
+
+.navbar {
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  box-shadow: var(--shadow);
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  text-shadow: var(--shadow);
+  text-decoration: none;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.nav-links a:hover {
+  text-shadow: var(--shadow);
+}
+/* Relaxer Circle */
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-shadow: var(--shadow);
+  margin-bottom: 60px;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 4px solid var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  transition: transform 4s ease-in-out, box-shadow 4s ease-in-out; /* 4s matches breathe-in */
+}
+
+.circle.grow {
+  transform: scale(1.5);
+  box-shadow: 0 0 30px var(--accent-color);
+}
+
+
+.text {
+  font-size: 1.3rem;
+  text-shadow: var(--shadow);
+}
+
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  font-size: 0.9rem;
+  box-shadow: 0 -1px 10px var(--accent-color);
+  border-top: 2px solid var(--accent-color);
+}
+
+#start-btn {
+  padding: 10px 16px;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--accent-color);
+  transition: 0.3s;
+}
+
+#start-btn:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}

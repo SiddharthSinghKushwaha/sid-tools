@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Format Converter</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="image-converter.css" />
+  <script src="theme.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo">Siddharth's Tools</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <h1>🖼 Image Format Converter</h1>
+
+    <div class="tool-container">
+
+    <!-- LEFT: Drop Zone -->
+    <div class="drop-zone-wrapper">
+        <div id="drop-zone">
+        <p>📂 Drag & drop image<br>or click to select</p>
+        </div>
+        <input type="file" id="imageInput" accept="image/*" style="display: none;" />
+    </div>
+    <!-- CENTER: Format Selection -->
+    <div class="convert-controls">
+        <label for="formatSelect">Convert to:</label>
+        <select id="formatSelect">
+        <option value="image/png">PNG</option>
+        <option value="image/jpeg">JPEG</option>
+        <option value="image/webp">WEBP</option>
+        </select>
+        <button id="convertBtn">Convert</button>
+    </div>
+
+    <!-- RIGHT: Download + Reset -->
+    <div class="download-controls">
+        <div id="download-section" style="display: none;">
+        <p>✅ Converted!</p>
+        <a id="downloadLink" href="#" download="converted-image">⬇️ Download</a>
+        </div>
+        <button id="uploadAgainBtn" style="display: none;">Upload Again</button>
+    </div>
+    </div>
+
+    <!-- Preview Area Below -->
+    <div id="preview-container">
+    <img id="preview" alt="Image Preview" />
+    </div>
+
+
+    <canvas id="canvas" style="display:none;"></canvas>
+  </main>
+
+  <footer>
+    © 2025 Siddharth. Convert with ease 🔄
+  </footer>
+
+  <script src="image-converter.js"></script>
+</body>
+</html>

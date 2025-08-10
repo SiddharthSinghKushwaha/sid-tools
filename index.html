@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siddharth's Tools</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+  </head>
+
+<body>
+  <canvas id="particles"></canvas>
+  <div class="content-wrapper">
+    <header>
+      <div class="theme-switcher">
+      <span onclick="setTheme('light')" title="Light Theme">🔆</span>
+      <span onclick="setTheme('dark')" title="Dark Theme">🌙</span>
+      <span onclick="setTheme('neon')" title="Neon Theme">💡</span>
+      </div>
+      <a href="index.html" class="logo">Siddharth's Tools</a>
+      <div class="nav-links">
+        <a href="about.html">ABOUT</a>
+      </div>
+    </header>
+
+    <div class="main-content">
+      <h1>Welcome to Siddharth's Tools</h1>
+      <div class="tool-grid">
+        <div class="column">
+          <a href="image-converter.html" class="tool">🖼 Image Format Converter</a>
+          <a href="image-cropper.html" class="tool">✂️ Image Cropper</a>
+          <a href="image-resizer.html" class="tool">🖼️ Image Resizer</a>
+          <a href="image-to-pdf.html" class="tool">🖼️ Image to PDF</a>
+          <a href="qr-generator.html" class="tool">🔳 QR Code Generator</a>
+          <a href="image-watermark.html" class="tool">💧 Image Watermark Tool</a>  
+          <a href="love-calculator.html" class="tool">Love Calculator 💘</a>
+        </div>
+        <div class="column">
+          
+          <a href="https://sites.google.com/view/sid-portfolio/home" class="tool">📁 My Portfolio</a>
+          <a href="relaxer.html" class="tool">🧘 Relax</a>
+          <a href="password-generator.html" class="tool">🔐 Password Generator</a>
+          <a href="dns-lookup.html" class="tool">🌐 DNS Lookup</a>
+          <a href="typing-speed-test.html" class="tool">⌨️ Typing Speed</a>
+          <a href="motivator.html" class="tool">🌟 Daily Motivation</a>
+          <a href="#.html" class="tool">🔧 More Tools Coming Soon</a>
+        </div>
+        <div class="column">
+          <a href="word-scramble.html" class="tool">🧩 Word Scramble</a>
+          <a href="tic-tac-toe.html" class="tool">❌⭕ Tic Tac Toe</a>
+          <a href="memory-game.html" class="tool">🧠 Memory Card Game</a>
+          <a href="hangman.html" class="tool">🎯 Hangman</a>
+          <a href="simon-game.html" class="tool"> Simon Game</a>
+          <a href="guess-number.html" class="tool"> Guess the Number</a>
+          <a href="rock-paper-scissors.html" class="tool">✊ Rock Paper Scissors</a>
+        </div>
+      </div>
+    </div>
+    <footer>
+      © 2025 Siddharth. Built with 💻 and ☕.
+    </footer>
+  </div>
+  <script src="theme.js"></script>
+  <script>
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+
+  let particles = [];
+  const particleCount = 100;
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  function createParticles() {
+    particles = [];
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 2 + 1,
+        dx: (Math.random() - 0.5) * 0.5,
+        dy: (Math.random() - 0.5) * 0.5,
+      });
+    }
+  }
+
+  function getParticleColor() {
+    const bodyClass = document.body.className;
+    switch (bodyClass) {
+      case 'light': return '#333';
+      case 'dark': return '#fff';
+      case 'neon': return '#0ff';
+      case 'elegant': return 'goldenrod';
+      case 'funky': return '#ff00ff';
+      default: return '#aaa';
+    }
+  }
+
+  function animateParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = getParticleColor();
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fill();
+
+      p.x += p.dx;
+      p.y += p.dy;
+
+      if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+    });
+
+    requestAnimationFrame(animateParticles);
+  }
+
+  createParticles();
+  animateParticles();
+</script>
+
+<script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
+<zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cmcga73nl001wmo1a0ha7uv1r'></zapier-interfaces-chatbot-embed>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Resizer</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="image-resizer.css" />
+</head>
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo">Siddharth's Tools</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+    </div>
+  </header>
+
+  <!-- Main content wrapper -->
+  <main class="main-content">
+    <h1>🖼️ Image Resizer</h1>
+    <div class="resizer-container">
+      <!-- Group drag-drop + file info vertically -->
+      <div class="upload-group">
+        <div class="drop-area" id="drop-area">
+          <p>Drag & drop an image</p>
+          <input type="file" id="file-input" accept="image/*" hidden />
+        </div>
+        <p id="file-info" class="file-info"></p>
+      </div>
+
+      <!-- Center: Controls -->
+      <div class="controls">
+        <input type="text" id="target-size" placeholder="Target size (e.g., 500KB or 1MB)" />
+        <button id="convert-btn">Convert</button>
+        <button id="reset-btn">Upload Again</button>
+      </div>
+
+      <!-- Right: Preview -->
+      <div class="preview">
+        <canvas id="preview-canvas"></canvas>
+        <a id="download-link" href="#" download="resized-image.jpg" style="display: none">
+          <button id="download-btn">Download</button>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Siddharth. Drag, Crop, Done! ✂️
+  </footer>
+  <script src="theme.js" defer></script>
+  <script src="image-resizer.js"></script>
+</body>
+</html>
