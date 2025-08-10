@@ -1,0 +1,165 @@
+/* Fixes layout and overflow */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #0d0d0d;
+  --text-color: #0ff;
+  --accent-color: #0ff;
+  --font-family: 'Courier New', Courier, monospace;
+  --shadow: 0 0 10px var(--accent-color);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+body.light {
+  --bg-color: #f4f4f4;
+  --text-color: #222;
+  --accent-color: #333;
+}
+
+body.dark {
+  --bg-color: #070707;
+  --text-color: #ffffff;
+  --accent-color: #d7d2d2;
+}
+
+body.neon {
+  --bg-color: #0d0d0d;
+  --text-color: #0ff;
+  --accent-color: #0ff;
+}
+
+.navbar {
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  box-shadow: var(--shadow);
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  text-shadow: var(--shadow);
+  text-decoration: none;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.nav-links a:hover {
+  text-shadow: var(--shadow);
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-shadow: var(--shadow);
+}
+
+.pdf-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.upload-area {
+  border: 2px dashed var(--accent-color);
+  padding: 20px;
+  width: 300px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.preview {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.preview img {
+  width: 100px;
+  height: auto;
+  border: 2px solid var(--accent-color);
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+}
+.action-buttons {
+  margin-top: 10px;
+}
+
+#clear-btn {
+  background-color: crimson;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 10px crimson;
+  margin-top: 10px;
+}
+
+#clear-btn:hover {
+  background-color: white;
+  color: crimson;
+}
+
+button {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+/* Footer unified */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  font-size: 0.9rem;
+  box-shadow: 0 -1px 10px var(--accent-color);
+  border-top: 2px solid var(--accent-color);
+}

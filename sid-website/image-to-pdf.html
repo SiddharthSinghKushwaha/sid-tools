@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image To PDF</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="image-to-pdf.css" />
+</head>
+
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo">Siddharth's Tools</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+    </div>
+  </header>
+
+  <!-- Add wrapper for flex layout -->
+  <main class="main-content">
+    <h1>🖼️ Convert Images to PDF</h1>
+
+    <div class="pdf-container">
+      <div class="upload-area" id="upload-area">
+        <p>Drag & drop images here</p>
+        <input type="file" id="image-input" accept="image/*" multiple hidden />
+        <button id="upload-btn">Choose Images</button>
+      </div>
+
+      <div class="preview" id="preview"></div>
+
+      <button id="convert-pdf-btn">Convert to PDF</button>
+      <div class="action-buttons">
+        <button id="clear-btn">🗑️ Clear Images</button>
+      </div>
+
+      <a id="download-link" style="display: none;" download="images.pdf">
+        <button id="download-pdf-btn">Download PDF</button>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Siddharth. Drag, Crop, Done! ✂️
+  </footer>
+  <script src="theme.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="image-to-pdf.js"></script>
+</body>
